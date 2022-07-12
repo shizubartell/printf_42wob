@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_character.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abartell <abartell@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:29:02 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/12 15:29:02 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/12 21:50:16 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "ft_printf.h"
 
-int ft_character(int c)
+int	ft_character(int c)
 {
-    ft_putchar_fd(1, fd)
-    return(1);
+	ft_putchar_fd(1, fd)
+	return (1);
 }

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_string.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 17:02:05 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/12 23:08:09 by abartell         ###   ########.fr       */
+/*   Created: 2022/07/12 22:54:05 by abartell          #+#    #+#             */
+/*   Updated: 2022/07/12 23:07:25 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+//giving the output of a string as a var for printf
 
-int ft_character(int c)
-int ft_string(char *str)
+int	ft_string(char *str)
+{
+	int	i;
 
-#endif
+	i = 0;
+	if (!str)
+		str = "(null)";
+	while (str[i] != '\0')
+//could also be written as += as it considers the present value of i
+//then saves the sum and adds the new value of i
+//example: i += 5 equals i = i +5
+	i = i + ft_putchar_fd(str[i], 1);
+	return (1);
+}
