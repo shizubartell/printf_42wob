@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abartell <abartell@student.42.fr>          +#+  +:+       +#+         #
+#    By: abartell <abartell@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/30 21:41:35 by abartell          #+#    #+#              #
-#    Updated: 2022/07/03 16:49:46 by abartell         ###   ########.fr        #
+#    Created: 2022/07/12 15:29:58 by abartell          #+#    #+#              #
+#    Updated: 2022/07/12 15:30:37 by abartell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 
 NAME	= libftprinft.a

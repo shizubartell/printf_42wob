@@ -1,13 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_character.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abartell <abartell@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 17:02:05 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/12 15:26:38 by abartell         ###   ########.fr       */
+/*   Created: 2022/07/12 15:29:02 by abartell          #+#    #+#             */
+/*   Updated: 2022/07/12 15:29:02 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include <libft.h>
+
+int ft_character(int c)
+{
+    ft_putchar_fd(1, fd)
+    return(1);
+}
