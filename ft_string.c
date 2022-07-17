@@ -6,7 +6,7 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 22:54:05 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/12 23:07:25 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/16 21:49:59 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_string(char *str)
 //could also be written as += as it considers the present value of i
 //then saves the sum and adds the new value of i
 //example: i += 5 equals i = i +5
-	i = i + ft_putchar_fd(str[i], 1);
+	i = i + write(1, &str[i], 1);
 	return (1);
 }

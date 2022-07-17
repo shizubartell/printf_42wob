@@ -6,10 +6,17 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 21:42:37 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/12 21:50:52 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/17 12:28:19 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_percentage()
+int	ft_percentage(int c)
+{
+    int i;
+
+    i = 0;
+    write (1, &c, 1);
+    return (i + 1);
+}

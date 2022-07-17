@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_unsigned.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 17:02:05 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/17 12:21:17 by abartell         ###   ########.fr       */
+/*   Created: 2022/07/16 21:09:06 by abartell          #+#    #+#             */
+/*   Updated: 2022/07/16 21:13:48 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+void	ft_unsigned(unsigned int n, int *ptr)
+{
+	if (n > 9)
+	{
+		ft_putnbr_u(n / 10, ptr);
+		n %= 10;
+	}
+	*ptr += ft_putchar(n + '0');
+}
 
-int	ft_character(int c);
-int	ft_string(char *str);
-int ft_percentage(int c);
+void	print_nmb_u(va_list arg, int *buffer)
+{
+	int		num;
 
-#endif
+	num = va_arg(arg, int);
+	ft_unsigned(num, buffer);
+}

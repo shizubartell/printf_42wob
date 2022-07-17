@@ -6,37 +6,67 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:28:49 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/12 23:10:37 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/16 21:47:35 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include <stdarg.h>
 
-static int	ft_arguments(const char *a, va_list args)
+static int	ft_arguments(va_list args, const char variable)
 {
-	if (*a == 'c')
+	if (variable == 'c')
 		return (ft_character(va_arg(args, int)));
-	else if (*a == 's')
-		return (ft_string(va_arg(args, char)));
-	else if (*a == '%')
-		return (ft_percentage(va_arg(args, int)));
-	{
-		
-	}
+	else if (variable == 's')
+		return (ft_string(va_arg(args, char *)));
+	// else if (*variable == '%')
+	// 	return (ft_percentage(va_arg(args, int)));
+	// else if (*variable == 'p')
+	// 	return (ft_pointer(va_arg(args, void *)));
+	// else if (*variable == 'x')
+	// 	return (ft_lc_hexa_deci(va_arg(args, unsigned long)));
+	// else if (*variable == 'X')
+	// 	return (ft_uc_hexa_deci(va_arg(args, unsigned long)));
+	// else if (*variable == 'u')
+	// 	return (ft_unsigned(va_arg(args, unsigned long)));
+	return (0);
 }
 
-int	ft_printf(const char *ptr, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	const char	*str;
+	// counting for the number of spaces we return i.E. Hello = 5
+	int	counting;
+	// using i to go through our string (or other formats/var)
 	int	i;
 
+	counting = 0;
 	i = 0;
-	// setting value for str
-	if (!str)
-		return (0);
-	va_start(args, ptr);
-	// going through the different possibilites of the argument
+
+	va_start(args, str);
+	while (str[i] != '\0')
+	{
+		if (str[i] == '%')
+		{
+			counting = counting + ft_arguments(args, str[i + 1]);
+			i++;
+		}
+		else
+		{
+			write(1, &str[i], 1);
+			counting++;
+		}
+			i++;
+	}
 	va_end(args);
-	return (i);
+	return (counting);
+}
+
+
+int	main(void)
+{
+	//int	i;
+
+	//i = 20;
+	ft_printf("Hello%s", "42");
 }

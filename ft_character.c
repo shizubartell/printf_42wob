@@ -6,7 +6,7 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:29:02 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/12 21:50:16 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/16 22:50:58 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	ft_character(int c)
 {
-	ft_putchar_fd(1, fd)
+	write(1, &c, 1);
 	return (1);
 }
