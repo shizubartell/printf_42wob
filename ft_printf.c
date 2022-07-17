@@ -6,7 +6,7 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:28:49 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/16 21:47:35 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/17 17:54:57 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@ static int	ft_arguments(va_list args, const char variable)
 {
 	if (variable == 'c')
 		return (ft_character(va_arg(args, int)));
-	else if (variable == 's')
+	if (variable == 's')
 		return (ft_string(va_arg(args, char *)));
-	// else if (*variable == '%')
-	// 	return (ft_percentage(va_arg(args, int)));
+	if (variable == 'i' || variable == 'd')
+		return (ft_printnbr(va_arg(args, int)));
+	else if (variable == '%')
+	{
+		ft_putchar_fd('%', 1);
+		return (1);
+	}
 	// else if (*variable == 'p')
 	// 	return (ft_pointer(va_arg(args, void *)));
 	// else if (*variable == 'x')
@@ -68,5 +73,5 @@ int	main(void)
 	//int	i;
 
 	//i = 20;
-	ft_printf("Hello%s", "42");
+	ft_printf("%%\n", "-473737\n");
 }
