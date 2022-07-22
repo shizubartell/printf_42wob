@@ -6,7 +6,7 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:28:49 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/17 17:54:57 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/22 13:29:36 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ static int	ft_arguments(va_list args, const char variable)
 		return (ft_string(va_arg(args, char *)));
 	if (variable == 'i' || variable == 'd')
 		return (ft_printnbr(va_arg(args, int)));
+	if (variable == 'x')
+		return (ft_lc_hexa_deci(va_arg(args, unsigned int)));
+	if (variable == 'X')
+		return (ft_uc_hexa_deci(va_arg(args, unsigned long)));
+	if (variable == 'p')
+		return (ft_pointer(va_arg(args, void *)));
 	else if (variable == '%')
 	{
 		ft_putchar_fd('%', 1);
 		return (1);
 	}
-	// else if (*variable == 'p')
-	// 	return (ft_pointer(va_arg(args, void *)));
-	// else if (*variable == 'x')
-	// 	return (ft_lc_hexa_deci(va_arg(args, unsigned long)));
-	// else if (*variable == 'X')
-	// 	return (ft_uc_hexa_deci(va_arg(args, unsigned long)));
 	// else if (*variable == 'u')
 	// 	return (ft_unsigned(va_arg(args, unsigned long)));
 	return (0);
