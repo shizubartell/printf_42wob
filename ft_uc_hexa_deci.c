@@ -6,34 +6,41 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:51:57 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/22 12:03:53 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/22 21:00:42 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int ft_putchar (int c)
+int ft_putcharu(int c)
 {
     write(1, &c, 1);
     return (1);
 }
 
-int ft_uc_hexa_deci (unsigned int max)
+//prints the value in hexadecimal format with
+//alphabets in uppercase (A-F)
+int ft_uc_hexa_deci(unsigned int max)
 {
-    int max;
+    int ma;
 
-    max = 0;
+    ma = 0;
     if (max < 16)
     {
+    //to be able to print the value we move the input
+    // 55 spaces on the ASCII table if its bigger than 9
+    //otherwise only 48 spaces (A-F)
         if (max > 9)
-            max = max + ft_putchar(max + 55);
+            ma= ma + ft_putcharu(max + 55);
         else
-            max = max + ft_putchar(max + 48);
+            ma = ma + ft_putcharu(max + 48);
     }
     else if (max > 15)
     {
-        max = max + ft_uc_hexa_deci(max / 16);
-        max = max + ft_uc_hexa_deci(max % 16);
+        //divide and modulus operator for base 16
+        //0123456789ABCDEF
+        ma = ma + ft_uc_hexa_deci(max / 16);
+        ma = ma + ft_uc_hexa_deci(max % 16);
     }
-    return(max);
+    return(ma);
 }

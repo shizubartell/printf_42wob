@@ -6,7 +6,7 @@
 #    By: abartell <abartell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/12 15:29:58 by abartell          #+#    #+#              #
-#    Updated: 2022/07/17 16:59:52 by abartell         ###   ########.fr        #
+#    Updated: 2022/07/22 20:41:56 by abartell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ SRCS	=	ft_printf.c \
 			ft_pointer.c \
 			ft_string.c \
 			ft_printnbr.c \
+			ft_lc_hexa_deci.c \
+			ft_uc_hexa_deci.c \
+			ft_unsigned.c \
 
 
 #RM is a reference to a "make" variable

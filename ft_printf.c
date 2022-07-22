@@ -6,7 +6,7 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:28:49 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/22 13:29:36 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/22 20:43:18 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ static int	ft_arguments(va_list args, const char variable)
 		return (ft_uc_hexa_deci(va_arg(args, unsigned long)));
 	if (variable == 'p')
 		return (ft_pointer(va_arg(args, void *)));
+	if (variable == 'u')
+		return (ft_unsigned(va_arg(args, unsigned int)));
 	else if (variable == '%')
 	{
 		ft_putchar_fd('%', 1);
 		return (1);
 	}
-	// else if (*variable == 'u')
-	// 	return (ft_unsigned(va_arg(args, unsigned long)));
 	return (0);
 }
 
@@ -68,10 +68,11 @@ int	ft_printf(const char *str, ...)
 }
 
 
-int	main(void)
-{
-	//int	i;
+// int	main(void)
+// {
+// 	//i = 20;
+// 	ft_printf("Hey my pointer is:%p \n", 112121);
+// 	//printf("Hey my pointer is:%p \n", 1);
 
-	//i = 20;
-	ft_printf("%%\n", "-473737\n");
-}
+// 	return (0);
+// }

@@ -6,44 +6,53 @@
 /*   By: abartell <abartell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 20:21:08 by abartell          #+#    #+#             */
-/*   Updated: 2022/07/22 13:30:24 by abartell         ###   ########.fr       */
+/*   Updated: 2022/07/22 16:55:06 by abartell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int ft_putchar(int c)
+int ft_putcharr(int c)
 {
     write(1, &c, 1);
     return(1);
 }
 
-static int hex_pointer(unsigned long p)
+static int hex_pointer(unsigned long pr)
 {
     int p;
 
     p = 0;
-    if (p < 16)
+    if (pr < 16)
     {
-        if (p > 9)
-            p = p + ft_putchar(p + 87);
+        if (pr > 9)
+            p = p + ft_putcharr(pr + 87);
         else
-            p = p + ft_putchar(p + 48);
+            p = p + ft_putcharr(pr + 48);
     }
-    else if (p > 15)
+    else if (pr > 15)
     {
-        p = p + hex_pointer(p / 16);
-        p = p + hex_pointer(p % 16);
+        p = p + hex_pointer(pr / 16);
+        p = p + hex_pointer(pr % 16);
     }
     return (p);
 }
 
-int ft_pointer(void *ptr)
-{
-    int point;
+// int ft_pointer(void *ptr)
+// {
+//     int point;
 
-    point = 0;
-    point = point + ft_string("0x");
-    point = point + hex_pointer((unsigned long)ptr);
-    return (point);
+//     point = 0;
+//     point = point + ft_string("0x");
+//     point = point + hex_pointer((unsigned long)ptr);
+//     return (point);
+// }
+
+int	ft_pointer(void *p)
+{
+	unsigned long	address;
+
+	address = (unsigned long)p;
+	ft_putstr_fd("0x", 1);
+	return (2 + hex_pointer(address));
 }
